@@ -1,0 +1,16 @@
+{
+  "name": "todo_list_app",
+  "version": "1.0.0",
+  "description": "to do list app, add multiple task manage task list here",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Atul_Solanki",
+  "license": "ISC",
+  "dependencies": {
+    "ejs": "^3.1.9",
+    "express": "^4.18.2",
+    "mongoose": "^6.9.2"
+  }
+}

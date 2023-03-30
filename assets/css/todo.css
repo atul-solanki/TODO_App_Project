@@ -1,0 +1,276 @@
+
+
+/******** Utility Classes ***********/
+
+.flex{
+    display:flex;
+}
+.j-c{
+    justify-content: center;
+}
+.j-sb{
+    justify-content: space-between;
+}
+.j-se{
+    justify-content: space-evenly;
+}
+.j-fe{
+    justify-content: flex-end;
+}
+.a-c{
+    align-items: center;
+}
+.a-s{
+    align-items: start;
+}
+.f-c{
+    flex-direction:column;
+}
+
+/************** Defining color Variables *******/
+:root{
+    --addButton:#252525;
+    --body-background:#324e4f;
+    --border-color:#dea6a6;
+    --box-bg:#fdd1d1;
+    --category-background:#d8d8ff;
+    --category-color:#4a4a76;
+    --dark:#000;
+    --delButton:#ba0000;
+    --font-color-hard:#808080;
+    --font-color-soft:#fff;
+    --input-background:transparent;
+    --list-background:#f0f0f0;
+    --list-hover:#e7abaa;
+    --personalButton-bg:#005effc3;
+    --homeButton-bg:crimson;
+    --officeButton-bg:#4a4a76;
+    --cleaningButton-bg:darkolivegreen;
+}
+
+
+*{
+    margin:0;
+    font-family: 'Alkatra', cursive, 'Ubuntu', sans-serif;
+    box-sizing: border-box;
+}
+
+.lt{
+    text-decoration: line-through;
+}
+
+body{
+    height:100vh;
+    background:var(--body-background);
+}
+
+
+.box{
+    width:500px;
+    height:auto;
+    padding:1rem 0;
+    margin:2rem;
+    background:var(--box-bg);
+    border-radius:10px;
+    box-shadow:0 0 15px 5px rgba(145, 145, 145, 0.5);
+}
+
+
+header{
+    display: inline-flex;
+    flex-direction: row;
+    align-items: center;
+    margin-bottom: 1.5rem;
+}
+
+.box h1{
+    text-align: center;
+    color:var(--font-color-hard);
+}   
+
+/* *************** User Input **************** */
+form{
+    width: 100%;
+}
+
+.box .innerBox{
+    height: 220px;
+    
+}
+.box .dateAndCateg{
+    width:100%;
+    height:65px;
+    /* padding:0 .3rem; */
+    color:var(--font-color-hard);
+    background:transparent;
+    border-radius:5px;
+}
+.box .dateAndCateg .date{
+    width: 100%;
+    height: 100%;
+    padding: 0 .4rem;
+    border: 2px solid var(--border-color);
+    border-right: none;
+}
+.box .dateAndCateg .date:focus-within {
+    background-color: var(--list-hover);
+}
+.box .dateAndCateg .category{
+    width: 100%;
+    height: 100%;
+    padding: 0 .4rem;
+    border: 2px solid var(--border-color);
+    border-left: none;
+    border-right: none;
+}
+.box .dateAndCateg .category:focus-within {
+    background-color: var(--list-hover);
+}
+.box .desc textarea{
+    width:300px;
+    border:none;
+    outline:none;
+    border-radius:5px;
+    padding:1rem;
+    font-size:1rem;
+    color:var(--font-color-textarea);
+    background: var(--textarea-background);
+}
+.box .desc textarea::placeholder{
+    color:var(--font-color-textarea);
+}
+
+button[type="submit"]{
+    margin-top: 2rem;
+}
+
+.box  button{
+    width:140px;
+    height:35px;
+    font-size:1rem;
+    border-radius:5px;
+    border:none;    
+    cursor:pointer;
+    color:var(--font-color-soft);
+    background-color:var(--addButton);
+    transition:all .3s ease-in-out;
+    box-shadow:inset -1px -1px 3px rgba(255, 255, 255, 1),inset 1px 1px 3px rgba(0, 0, 0, 0.4);
+}
+.box button:hover{
+    transform:scale(1.2);   
+}
+#deleteButton{
+    background-color:var(--delButton);
+    margin-top:1rem;
+}
+#deleteButton span{
+    margin:.5rem;
+}
+
+.desc {
+    width: 100%;
+    height: 87px;
+    padding: 0.5rem 1rem 0;
+    border-top: 2px solid var(--border-color);
+}
+.desc:focus-within {
+    background-color: var(--list-hover);
+}
+
+.desc-icon{
+    height: 100%;
+    width: 32px;
+}
+
+.desc input {
+    border: none;
+    width: 100%;
+    outline: none;
+    background: var(--input-background);
+}
+
+input[type="date"]{
+    border:none;
+    outline:none;
+    color:rgb(102, 102, 102);
+    border-radius:5px;
+    background-color: var(--input-background);
+    /* box-shadow:0 1px 2px  rgba(0,0,0,.5); */
+}
+
+#category{
+    border:none;
+    outline:none;
+    color:rgb(102, 102, 102);
+    border-radius:5px;
+    background-color: transparent;
+    /* box-shadow:0 1px 2px  rgba(0,0,0,.5); */
+}
+select option {
+    margin: 40px;
+    background: var(--dark);
+    color: var(--font-color-soft);
+}
+
+
+/* ************ TODO List CSS *************** */
+.box .todoList{
+    margin-top: 2rem;
+    width:100%;
+    padding-inline: 20px;
+    height:auto;
+}
+
+.box .todoList .li{
+    width:100%;
+    height:60px;
+    list-style:none;
+    padding:0 1rem;
+    transition:all .5s ease-in-out;
+    border-top: 2px solid var(--border-color);
+}
+.box .todoList .li:hover{
+    background:var(--list-hover);
+}
+.box .todoList .li .left{
+    display:flex;
+    align-items: center;
+    justify-content: space-between;
+}
+.box .todoList .li .left .dynamicDataLeft{
+    margin-left:1rem;
+}
+.box .todoList .left .dynamicDataLeft .taskDate{
+    color:var(--font-color-hard);
+    font-size:.6rem;
+}
+.box .todoList .left .data{
+    font-size:1rem;
+    margin-top: 5px;
+    margin-bottom: -9px;
+}
+.box .todoList .button{
+    padding:.3rem;
+    border-radius:8px;
+    font-size:1rem;
+    border:none;
+    color: white;
+    min-width: 90PX;
+    text-align: center;
+}
+.personal{
+    background-color: var(--personalButton-bg);
+}
+.office{
+    background-color: var(--officeButton-bg);
+}
+.home{
+    background-color: var(--homeButton-bg);
+}
+.cleaning{
+    background-color: var(--cleaningButton-bg);
+}
+.box .todoList input[type="checkbox"]{
+    accent-color: var(--dark);
+    cursor: pointer;
+}
